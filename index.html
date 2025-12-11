@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Manasi Patil - .NET Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content=".NET Developer portfolio of Manasi Patil" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+
+
+   <style>
+    /* =========================
+       THEME VARIABLES
+       ========================= */
+    :root {
+        /* Dark theme defaults */
+        --page-bg: #020617;
+
+        --bg-dark: #050816;
+        --bg-alt: #0f172a;
+        --accent: #6366f1;
+        --accent-soft: rgba(99, 102, 241, 0.15);
+
+        --text-main: #e5e7eb;
+        --text-muted: #9ca3af;
+        --border-soft: rgba(148, 163, 184, 0.3);
+
+        --radius-lg: 18px;
+        --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+        --nav-height: 70px;
+
+        /* Section backgrounds (DARK THEME) */
+        --section-bg-1: #020617;   /* very dark */
+        --section-bg-2: #0b1120;   /* slightly lighter dark */
+        --section-text: #e5e7eb;
+        --section-muted: #9ca3af;
+    }
+
+    /* Light theme overrides (used when body has class="light-theme") */
+    body.light-theme {
+        --page-bg: #f3f4f6;
+
+        --bg-dark: #f8fafc;
+        --bg-alt: #ffffff;
+        --accent: #4f46e5;
+        --accent-soft: rgba(79, 70, 229, 0.12);
+
+        --text-main: #111827;
+        --text-muted: #4b5563;
+        --border-soft: rgba(31, 41, 55, 0.25);
+
+        /* Sections become white / light grey */
+        --section-bg-1: #ffffff;
+        --section-bg-2: #f3f4f6;
+        --section-text: #111827;
+        --section-muted: #4b5563;
+    }
+
+    /* =========================
+       GLOBAL RESETS
+       ========================= */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--page-bg);
+        color: var(--text-main);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Layout */
+    .container {
+        width: min(1120px, 92%);
+        margin: 0 auto;
+    }
+
+    /* Sections – full-width + alternating backgrounds */
+    section {
+        width: 100%;
+        padding: 80px 0;
+        color: var(--section-text);
+    }
+
+    section:nth-of-type(odd) {
+        background: var(--section-bg-1);
+    }
+
+    section:nth-of-type(even) {
+        background: var(--section-bg-2);
+    }
+
+    section p,
+    section .section-subtitle {
+        color: var(--section-muted);
+    }
+
+    /* =========================
+       NAVBAR
+       ========================= */
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(18px);
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.65));
+        border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--nav-height);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+    }
+
+    .logo-badge {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        display: grid;
+        place-items: center;
+        font-size: 16px;
+        background: radial-gradient(circle at top left, #4f46e5, #0f172a);
+        box-shadow: 0 0 18px rgba(79, 70, 229, 0.5);
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 18px;
+        font-size: 0.95rem;
+    }
+
+    nav a {
+        padding: 20px 0;
+        border-radius: 999px;
+        color: var(--text-muted);
+        transition: background 0.25s, color 0.25s, transform 0.15s;
+         color: #e5e7eb !important; 
+         
+    }
+
+    nav a:hover {
+        background: var(--accent-soft);
+        color: #e5e7eb;
+        color: #ffffff !important;
+        transform: translateY(-1px);
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero {
+        padding: 70px 0 50px;
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+        gap: 40px;
+        align-items: center;
+        height: auto;
+    }
+   /* Make only the hero section full-width, but keep content centered */
+.container.hero {
+    width: 100%;          /* stretch full width */
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 6%;
+    padding-right: 6%;    /* acts like side margin for content */
+}
+
+/* Hero background: white in light theme */
+body.light-theme .container.hero {
+    background: #ffffff;
+}
+
+/* If you want hero also dark in dark theme: */
+body:not(.light-theme) .container.hero {
+    background: var(--section-bg-1);
+}
+.container.hero {
+    padding-left:20%;
+    padding-right: 20%;
+}
+
+    .hero-title {
+        font-size: clamp(2.1rem, 3vw, 2.8rem);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .hero-title span {
+        background: linear-gradient(120deg, #a855f7, #6366f1, #22c55e);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .hero-subtitle {
+        font-size: 1.0rem;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .hero-tagline {
+        color: var(--text-muted);
+        margin-bottom: 18px;
+        font-size: 1.15rem;
+    }
+
+    .hero-bullets {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .pill {
+        padding: 4px 11px;
+        font-size: 0.78rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: rgba(15, 23, 42, 0.8);
+        color: var(--text-muted);
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .btn {
+        border-radius: 999px;
+        padding: 9px 18px;
+        font-size: 0.9rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s, transform 0.12s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #4f46e5, #6366f1);
+        color: white;
+        box-shadow: 0 14px 30px rgba(79, 70, 229, 0.5);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 40px rgba(79, 70, 229, 0.65);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--text-main);
+        border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-outline:hover {
+        background: rgba(15, 23, 42, 0.9);
+        border-color: var(--accent);
+    }
+
+    .hero-meta {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-right: 10px;
+    }
+
+    .hero-visual {
+        padding: 20px;
+        border-radius: 26px;
+        box-shadow:#4b5563;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-avatar {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        display: grid;
+        place-items: center;
+        font-size: 1.3rem;
+        color: var(--text-muted);
+    }
+
+    .hero-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
+    
+    .floating-pill {
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        padding: 7px 11px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.95);
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+    }
+
+    .floating-pill.bottom {
+        top: auto;
+        bottom: 18px;
+        left: 18px;
+        right: auto;
+    }
+
+    /* =========================
+       SECTION HEADERS
+       ========================= */
+    .section-header {
+        margin-bottom: 24px;
+    }
+
+    .section-kicker {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--accent);
+        margin-bottom: 4px;
+    }
+
+    .section-title {
+        font-size: 2.8rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: var(--section-text);
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* =========================
+       ABOUT
+       ========================= */
+       .about-line {
+    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: blue; /* text color becomes blue */
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* underline animation */
+.about-line::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 100;
+    background: orange; /* underline color */
+    transition: width 0.3s ease;
+}
+
+.about-line:hover::after {
+    width: 100%;
+}
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+        gap: 28px;
+        align-items: flex-start;
+    }
+    .section-title {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* UNDERLINE ANIMATION */
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: orange;  /* underline color */
+    transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+    width: 100%;
+}
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 80px;        /* your fixed underline width */
+    height: 3px;
+    background: orange;
+    transform: translateX(-50%);   /* centers underline */
+    transition: width 0.3s ease;
+}
+
+    .about-photo {
+        display: flex;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .about-photo img {
+        width: 90%;
+        box-shadow: var(--shadow-soft);
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid var(--white);
+        box-sizing: border-box;
+    }
+     .about-photo img {
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+    cursor: pointer;
+}
+
+.about-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 28px rgba(255, 165, 0, 0.4); /* orange glow */
+}
+
+    .card {
+        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 1));
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-soft);
+        padding: 18px 18px 16px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+        font-size: xx-large;
+    }
+
+    .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+       
+    }
+
+    .chip {
+        border-radius: 999px;
+        padding: 3px 10px;
+        font-size: 0.95rem;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        color: var(--text-muted);
+        background: rgba(15, 23, 42, 0.9);
+        
+    }
+    .chip {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.chip:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 16px rgba(99,102,241,0.25);
+}
+
+/* For chips & project tags only */
+body.light-theme .chip,
+body.light-theme .project-tags span {
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+/* For skills – keep them clean, no background box */
+body.light-theme .skills-list span {
+    background: transparent;
+    color: white;    /* dark text in light theme */
+}
+
+/* Make sure dots are visible too */
+body.light-theme .skills-list span::before {
+    background: var(--accent);
+}
+
+
+/* keep skills simple in light mode too */
+body.light-theme .skills-list span {
+    background: transparent;
+    color: #111827;
+}
+
+
+    /* =========================
+       SKILLS
+       ========================= */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+    }
+
+    .skills-card h3 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        color: var(--section-text);
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+   .skills-list {
+    display: flex;
+    flex-direction: column;   /* vertical stacking */
+    align-items: flex-start;  /* aligns all dots & text to the left */
+    gap: 12px;
+    margin: 10 0 ;           /* keeps the whole list centered inside the card */
+    text-align: left;         /* keeps text aligned properly */
+    
+}
+
+/* Each skill as a clean text row like in Dinesh's portfolio */
+.skills-list span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--section-text);
+    font-size: 0.9rem;
+    
+}
+
+/* Small accent dot before each skill */
+.skills-list span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+}
+.skills-list span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+    cursor: pointer;
+}
+
+/* Hover effect: lift skill slightly */
+.skills-list span:hover {
+    transform: translateX(6px);        /* subtle slide right */
+    color: var(--accent);              /* optional: highlight text */
+}
+
+/* Dot animation on hover */
+.skills-list span:hover::before {
+    background: orange;                /* dot color change */
+}
+/* Skills card white background in light mode */
+body.light-theme .skills-card {
+    background: #ffffff !important;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+/* Skills card heading text color */
+.skills-card h3 {
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* centers heading + icon */
+    gap: 12px;
+    font-size:large;
+    font-weight: 1000;
+}
+
+/* Skills card icons color */
+.skills-card h3 i {
+    color: orange;
+     font-size: 1.6rem;       /* bigger icon */
+    margin-right: 8px;
+}
+/* Increase size of skills text */
+.skills-list span {
+    font-size: 1.1rem !important;   /* bigger text */
+    font-weight: 500;               /* makes text look stronger */
+}
+/* Hover animation for skills cards */
+.skills-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.skills-card:hover {
+    transform: translateY(-6px);   /* lift effect */
+    box-shadow: 0 18px 36px rgba(0,0,0,0.18);  /* stronger shadow */
+    border-color: orange;
+}
+/* Hover animation for skills card */
+.skills-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Card lift effect */
+.skills-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* Icon animation on hover */
+.skills-card:hover h3 i {
+    color: darkblue !important;          /* change icon color to blue */
+    transform: rotate(12deg);        /* slight right tilt */
+    transition: transform 0.25s ease, color 0.25s ease;
+    
+}
+
+
+
+
+    /* =========================
+       PROJECTS
+       ========================= */
+       
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+    }
+    .project-card{
+        font-size:large;
+        line-height: 1.6;
+    }
+   
+    .project-pill {
+        font-size: 0.78rem;
+        color: var(--accent);
+        margin-bottom: 8px;
+    }
+
+    .project-meta {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .project-tags span {
+        font-size: 0.74rem;
+        padding: 3px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        background: rgba(15, 23, 42, 0.9);
+        color: var(--text-muted);
+    }
+    
+    /* Smooth hover animation for project cards */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Lift upward on hover */
+.project-card:hover {
+    transform: translateY(-6px);  /* slightly upward effect */
+    box-shadow: 0 16px 36px rgba(0,0,0,0.20); /* premium shadow */
+}
+/* In light mode, make project cards white */
+body.light-theme .projects-grid .card {
+    background: #ffffff !important;
+    border-color: #d1d5db;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+/* PROJECT CARD FIX: Perfect alignment */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Force all images to same height */
+.project-card img {
+    width: 100%;
+    height: 200px;          /* same image height across all cards */
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Clean consistent spacing */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+    height: 100%;            /* all cards equal height */
+    padding-bottom: 20px;
+}
+
+/* Make description area flexible but aligned */
+.project-description {
+    flex-grow: 1;            /* this ensures equal alignment */
+}
+
+/* =========================
+   WORK EXPERIENCE – DINESH STYLE
+   ========================= */
+.experience-timeline {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* center vertical line */
+.experience-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--accent-soft);
+    transform: translateX(-50%);
+}
+
+/* one row: card + center + card/date */
+.experience-row {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) 80px minmax(0, 3fr);
+    column-gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* left-aligned row (card on left, date on right) */
+.experience-row.left {}
+
+/* right-aligned row (date on left, card on right) */
+.experience-row.right {}
+
+/* center column: dot on the line */
+.experience-center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.experience-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 3px solid var(--accent);
+    background: var(--section-bg-1);
+    margin: 0 auto;
+}
+
+/* card styling */
+.experience-card {
+    background: var(--bg-alt);
+    border-radius: var(--radius-lg);
+    padding: 18px 22px 16px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* hover: slight upward */
+.experience-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 46px rgba(0,0,0,0.35);
+}
+.experience-card:hover,
+.experience-row:hover .experience-card {
+    background: rgba(79, 70, 229, 0.10); /* slightly lighter */
+    transform: translateY(-4px); /* less lift */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* softer & smaller */
+}
+
+/* date text beside the dot */
+.experience-date {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #2563eb;
+}   /* change to blue if you want: color: #2563eb; */
+
+
+/* for the row where date is on left side of line */
+.experience-row.right .experience-date {
+    text-align: right;
+}
+
+/* text inside card */
+.experience-role {
+    font-size: 1.40rem;
+    font-weight: 500;
+    color: var(--section-text);
+    margin-bottom: 4px;
+}
+
+.experience-company {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.experience-card ul {
+    padding-left: 18px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-size: large;
+}
+
+.experience-card ul li {
+    margin-bottom: 4px;
+    font-size: large;
+}
+/* ===================================================
+   HOVER EFFECTS FOR EXPERIENCE TIMELINE
+   =================================================== */
+
+/* Hover when card is hovered */
+.experience-card:hover,
+.experience-row:hover .experience-card {
+    background: rgba(79, 70, 229, 0.15); /* light blue-ish */
+    transform: translateY(-6px);
+    box-shadow: 0 24px 46px rgba(0,0,0,0.35);
+}
+
+/* Date turns orange when card or row hovered */
+.experience-row:hover .experience-date {
+    color: orange;
+}
+
+/* Dot border turns orange when hovered */
+.experience-row:hover .experience-dot {
+    border-color: orange;
+}
+
+/* Smooth transitions */
+.experience-date,
+.experience-dot,
+.experience-card {
+    transition: all 0.3s ease;
+}
+
+/* ---------- MOBILE: stack vertically ---------- */
+@media (max-width: 768px) {
+    .experience-timeline::before {
+        left: 20px;
+    }
+
+    .experience-row {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .experience-center {
+        justify-content: flex-start;
+        padding-left: 10px;
+    }
+
+    .experience-dot {
+        margin-left: 10px;
+    }
+
+    .experience-row.right .experience-date {
+        text-align: left;
+    }
+
+    .experience-date {
+        margin-left: 40px;
+    }
+}
+
+
+    /* =============== EDUCATION & CERTIFICATIONS (Dinesh style) =============== */
+.edu-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 2fr);
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* MAIN EDUCATION CARD */
+.edu-main-card {
+    position: relative;
+    background: var(--bg-alt);
+    border-radius: 22px;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+/* rounded corner decoration top-right like Dinesh */
+.edu-main-top-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 80px;
+    background: var(--accent-soft);
+    border-bottom-left-radius: 50px;
+}
+
+.edu-main-body {
+    padding: 22px 24px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.edu-date-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.edu-degree {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--section-text);
+    margin-bottom: 4px;
+}
+
+.edu-college,
+.edu-inst {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.edu-inst {
+    margin-bottom: 10px;
+}
+
+.edu-grade {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--section-text);
+}
+
+.edu-points {
+    padding-left: 18px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.edu-points li {
+    margin-bottom: 4px;
+}
+/* make left & right panels match visually */
+.edu-layout {
+  align-items: stretch;
+}
+.edu-main-card,
+.cert-panel {
+  display: flex;
+  flex-direction: column;
+ 
+  min-height: 320px;       /* same visual height */
+}
+
+/* CERTIFICATIONS COLUMN */
+.cert-panel {
+    background: var(--bg-alt);
+    border-radius: 22px;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+    padding: 20px 22px 18px;
+}
+
+.cert-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--section-text);
+    margin-bottom: 2px;
+}
+
+.cert-subtitle {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.cert-card {
+    background: rgba(15, 23, 42, 0.9);
+    border-radius: 14px;
+    border: 1px solid var(--border-soft);
+    padding: 10px 14px 9px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cert-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--section-text);
+    margin-bottom: 2px;
+}
+
+.cert-meta {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.cert-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* hover effect like Dinesh */
+.cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    border-color: var(--accent);
+}
+
+/* LIGHT THEME overrides so it looks like screenshot */
+body.light-theme .edu-main-card,
+body.light-theme .cert-panel {
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(15,23,42,0.08);
+}
+
+body.light-theme .cert-card {
+    background: #ffffff;
+    border-color: #e5e7eb;
+}
+
+body.light-theme .cert-card:hover {
+    box-shadow: 0 10px 24px rgba(15,23,42,0.12);
+    border-color: #60a5fa;
+}
+
+body.light-theme .edu-main-top-decor {
+    background: #e5f0ff;
+}
+/* Hover for MAIN EDUCATION CARD */
+.edu-main-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+/* Hover for RIGHT PANEL (Professional Certifications container) */
+.cert-panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
+        gap: 18px;
+    }
+/* Remove dark card look for contact section */
+.contact-details {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 0;
+}
+
+/* Subtitle styling inside contact */
+.contact-details .section-subtitle {
+    margin: 6px 0 18px;
+    color: var(--section-muted);
+     font-size: 1.20rem;
+    margin-bottom: 25px;
+}
+
+/* Heading: Let's Connect – underline on card hover */
+.contact-details h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 6px;
+     font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.contact-details h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: orange;
+    transition: width 0.3s ease;
+}
+
+/* when mouse is anywhere on the card */
+.contact-details:hover h2::after {
+    width: 90px; /* adjust length as you like */
+}
+
+/* Layout for each contact row */
+.contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--section-text);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Icon base style */
+.contact-icon {
+    font-size: 1.55rem;
+    color: var(--accent);
+    min-width: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    
+    min-width: 28px;
+}
+
+/* Links */
+.contact-details a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+    font-size: 1.30rem;
+}
+
+/* Hover on each row (icon + text) */
+.contact-details p:hover {
+    color: orange;
+    transform: translateX(4px);
+}
+
+.contact-details p:hover .contact-icon {
+    color: orange;
+    transform: translateX(2px);
+}
+
+.contact-details p:hover a {
+    color: orange;
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+
+    .contact-details p {
+        font-size: 1.30rem;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      
+    
+    }
+
+    .contact-details strong {
+        color: var(--text-main);
+    }
+
+    .contact-form {
+        display: grid;
+        gap: 15px;
+    }
+    /* Orange underline under Let's Connect on hover */
+.contact-info-block h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-info-block h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    width: 0;
+    background: orange;
+    transition: width 0.3s ease;
+}
+
+/* When cursor is anywhere inside LEFT BLOCK */
+.contact-info-block:hover h2::after {
+    width: 120px; /* adjust length */
+}
+/* Contact form hover = soft light blue background */
+.contact-form {
+    background: #ffffff !important;
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact-form:hover {
+    background: lightblue !important; /* soft elegant blue */
+    box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+}
+
+
+    /* ---------- CONTACT LAYOUT ---------- */
+.contact-flex {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 60px;
+    margin-top: 30px;
+}
+
+/* ---------- LEFT SIDE ---------- */
+.contact-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.contact-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    max-width: 450px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-icon {
+    font-size: 1.4rem;
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+/* hover effect */
+.contact-row:hover {
+    transform: translateX(6px);
+    color: orange;
+}
+
+.contact-row:hover .contact-icon {
+    color: orange;
+}
+
+.contact-row a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Remove forced background and borders from hero image */
+.hero-avatar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove background & border from the photo itself */
+.hero-avatar img,
+.about-photo img {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* ---------- RIGHT FORM CARD ---------- */
+.contact-form {
+    background: #ffffff !important;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+    padding: 30px 28px;
+}
+
+.form-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.field label {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+body.light-theme .field input,
+body.light-theme .field textarea {
+    background: #ffffff;
+    border-color: #d1d5db;
+}
+
+/* form input styles improved */
+.field input,
+.field textarea {
+    background: #ffffff;
+    padding: 10px 12px;
+    font-size: 1rem;
+}
+
+.field textarea {
+    min-height: 100px;
+}
+
+/* Light theme: make contact form card white */
+body.light-theme .contact-form {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.85rem;
+    }
+
+    .field label {
+        color: var(--text-muted);
+        font-size: large;
+    }
+
+    .field input,
+    .field textarea {
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(15, 23, 42, 0.95);
+        color: var(--text-main);
+        padding: 8px 10px;
+        font-family: inherit;
+        font-size: 0.88rem;
+    }
+
+    body.light-theme .field input,
+    body.light-theme .field textarea {
+        background: #ffffff;
+        border-color: #d1d5db;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.4);
+    }
+
+    .field textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    footer {
+        border-top: 1px solid rgba(148, 163, 184, 0.25);
+        padding: 18px 0 22px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-align: center;
+        background: var(--section-bg-2);
+    }
+/* Bigger Contact Form Card */
+.contact-form {
+    background: #ffffff !important;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+    padding: 45px 40px; /* ⬅️ increased spacing */
+    max-width: 550px;   /* ⬅️ wider card */
+    width: 100%;
+    transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Bigger form title */
+.contact-form .form-title {
+    font-size: 1.6rem;     /* bigger */
+    margin-bottom: 30px;
+}
+
+/* Bigger input boxes */
+.contact-form .field input,
+.contact-form .field textarea {
+    height: 48px;          /* bigger height for inputs */
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+.contact-form .field textarea {
+    min-height: 140px;     /* bigger message box */
+}
+
+/* Bigger send button */
+.contact-form .btn-primary {
+    padding: 14px 0;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+/* Bigger Left Let's Connect Block */
+.contact-info-block {
+    padding: 10px 5px;
+    max-width: 520px;
+}
+
+.contact-heading {
+    font-size: 2rem;         /* bigger title */
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.contact-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 32px;
+}
+
+/* Bigger rows */
+.contact-row {
+    font-size: 1.15rem;       /* bigger text */
+    margin-bottom: 18px;
+}
+
+/* Bigger icons */
+.contact-icon {
+    font-size: 1.6rem;        /* bigger icon */
+}
+.contact-flex {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: center;  /* ← important */
+}
+.contact-form .btn-primary {
+    width: 100%;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+    @media (max-width: 860px) {
+        .hero {
+            grid-template-columns: 2fr 1.3fr;
+        }
+
+        .hero-visual {
+            order: -1;
+            max-width: 420px;
+            margin-left: auto;
+        }
+
+        section {
+    width: 100%;
+}
+        .about-grid,
+        .contact-grid,
+        .timeline-item {
+            grid-template-columns: 1fr;
+        }
+
+        nav ul {
+            gap: 10px;
+            font-size: 0.8rem;
+        }
+
+        .nav {
+            gap: 10px;
+        }
+    }
+
+    @media (max-width: 540px) {
+        header {
+            position: static;
+        }
+
+        .hero {
+            padding-top: 30px;
+        }
+
+        nav ul {
+            display: none;
+        }
+    }
+    /* FOOTER – strong dark blue background */
+footer {
+    background: rgb(10, 10, 73);              /* dark navy blue */
+    color: #ffffff;                  /* white text */
+    font-size: 1.2rem;                 /* bigger text */
+    padding: 25px 0;                 /* more spacing */
+}
+
+/* optional: center it nicely */
+footer span,
+footer {
+    text-align: center;
+    font-weight: 500;
+}
+
+</style>
+
+</head>
+<body>
+<header id="home">
+    <div class="container nav">
+        <div class="logo">
+            <div class="logo-badge">MP</div>
+            <span>Manasi&nbsp;Patil</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" class="btn btn-outline">🌙</button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="container hero">
+        <div>
+            
+            <h1 class="hero-title">Hi, I'm <span>Manasi&nbsp;Patil.</span></h1>
+            <p class="hero-tagline">
+                Motivated and detail-oriented .NET Developer with hands-on experience in building real-world web applications
+                using ASP.NET Core MVC, C#, Entity Framework Core, and SQL Server.
+            </p>
+
+           
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    Get in Touch →
+                </a>
+                <!-- replace href with actual resume file link -->
+                <a href="" class="btn btn-outline" target="_blank" rel="noopener">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-avatar">
+                <!-- You can replace this with your photo <img src="me.jpg" alt="Manasi Patil" /> -->
+               <div class="hero-avatar">
+            <img src="Mphoto.png" alt="Manasi Patil" />
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <center>
+                <h1 class="section-title">About Me</h1>
+                </center>
+            </div>
+
+            <div class="about-grid">
+                  <div class="about-photo">
+                   <img src="Manasi Profile photo for resume2.jpg" alt="Manasi Patil">
+                 </div>
+                 <div class="about-content">
+                   <h3 class="about-line">.NET Developer with Full-Stack Experience</h3>
+                    <p style="font-size:1rem;color:var(--text-muted);width: 580px;line-height: 1.6;">
+                        Motivated and detail-oriented .NET Developer with hands-on experience in developing real-world
+                        web applications using ASP.NET Core MVC, C#, Entity Framework Core, SQL Server, LINQ, HTML, CSS,
+                        and JavaScript.
+                        <br>
+                        <br>
+                        Strong understanding of MVC architecture, CRUD operations, and database-driven
+                        development. Passionate about building user-friendly, scalable applications and continuously
+                        improving technical skills.
+                        <br>
+                        <br>
+                        Strong understanding of MVC architecture, CRUD operations, and database-driven
+                        development. Passionate about building user-friendly, scalable applications and continuously
+                        improving technical skills.
+                    </p>
+                    <br>
+                    <div class="chip-row">
+                        <span class="chip">Clean Coding Practices</span>
+                        <span class="chip">MVC Architecture</span>
+                        <span class="chip">Web API</span>
+                        <span class="chip">Database-Driven Apps</span>
+                        
+                    </div>
+                  </div>  
+                 
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <center>
+                <h2 class="section-title">Skills &amp; Expertise</h2>
+                </center>
+               
+            </div>
+
+            <div class="skills-grid">
+                <div class="card skills-card">
+                    <center>
+                     <h3><i class="fa-solid fa-code"></i> Technical Skills & Database</h3>
+                    </center>
+                    <div class="skills-list">
+                        <span>C#</span>
+                        <span>Python</span>
+                        <span>C Programming</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>SQL Server</span>
+                    </div>
+                  
+                </div>
+
+                <div class="card skills-card">
+                    <center>
+                    <h3><i class="fa-solid fa-toolbox"></i> Frameworks & Tools</h3>
+
+                      </center>
+
+                    <div class="skills-list">
+                        <span>.NET Framework</span>
+                        <span>Entity Framework Core</span>
+                        <span>Django</span>
+                        <span>Bootstrap</span>
+                        <span>GitHub</span>
+                        <span>Visual Studio&nbsp;2022</span>
+                        <span>VS Code</span>
+                    
+                    </div>
+                  
+                </div>
+
+                <div class="card skills-card">
+                    <center>
+                   <h3><i class="fa-solid fa-user-check"></i> Soft Skills</h3>
+
+                    </center>
+                    <div class="skills-list">
+                        <span>Analytical Thinking</span>
+                        <span>Team Collaboration</span>
+                        <span>Adaptability</span>
+                        <span>Time Management</span>
+                        <span>Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <center>
+                <h2 class="section-title">Project Experience</h2>
+                </center>
+               
+            </div>
+
+            <div class="projects-grid">
+            <article class="card project-card">
+            <div class="project-image">
+            <img src="baglan.jpg" alt="Tourism Project">
+            </div>
+                    <h3 style="font-size:0.8em;">ExplorerBaglan Tourism Web Application</h3>
+                    <p class="project-meta">ASP.NET Core MVC • Identity • Leaflet.js • SQL Server</p>
+                    <p class="project-description", style="font-size:0.90rem;color:var(--text-muted);">
+                        Built a tourism platform displaying verified city spots with images, descriptions, and coordinates
+                        using ASP.NET Core MVC. 
+                        <br>
+                    
+                        Implemented Identity authentication, role-based access, and an admin
+                        approval workflow. Integrated Leaflet.js maps for accurate tourist spot locations and a smooth
+                        user experience.
+                    </p>
+                   
+            </article>
+
+             <article class="card project-card">
+            <div class="project-image">
+            <img src="Screenshot 2025-12-10 160021.png" alt="Tourism Project">
+            </div>
+                    <h3  style="font-size:0.8em;">Event Management System</h3>
+                    <p class="project-meta">Django • HTML • CSS • Bootstrap • SQL</p>
+                    <p class="project-description", style="font-size:0.90rem;color:var(--text-muted);">
+                        Developed an event browsing and ticket booking platform using Django. 
+                        <br>
+                        
+                        Implemented user
+                        authentication, search &amp; filter, QR-based tickets, and a review system. Designed a responsive UI
+                        with Bootstrap, including dark/light mode support.
+                    </p>
+                   
+                </article>
+
+                <article class="card project-card">
+                   <div class="project-image">
+                   <img src="budgettracker.png" alt="Tourism Project">
+            </div>
+                    <h3  style="font-size:0.8em;">Budget Tracker System</h3>
+                    <p class="project-meta">ASP.NET Core MVC • C# • EF Core • SQL Server</p>
+                    <p class="project-description", style="font-size:0.90rem;color:var(--text-muted);">
+                        During my .NET internship, I developed real-world applications including a Car Rental System and a
+                        CRM System. 
+                        <br>
+                        
+                        Implemented CRUD operations, data validation, and strongly-typed views to improve data
+                        flow and UI–database interaction. Built modules such as user registration, booking, and admin
+                        dashboards following clean coding practices and MVC standards.
+                    </p>
+                   
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    
+<!-- Experience -->
+<section id="experience">
+    <div class="container">
+        <div class="section-header">
+            <center>
+                <h2 class="section-title">Work Experience</h2>
+            </center>
+        </div>
+
+        <div class="experience-timeline">
+
+            <!-- ====== ROW 1 – card LEFT, date RIGHT ====== -->
+            <div class="experience-row left">
+                <!-- LEFT: CARD -->
+                <div class="experience-card">
+                    <p class="experience-role">Dotnet Developer Intern</p>
+                    <p class="experience-company">Real-world Web Application Development</p>
+                    <ul>
+                        <li>Developed applications including a Car Rental System and CRM System using ASP.NET Core MVC, C#, SQL Server, Entity Framework Core, and LINQ.</li>
+                        <li>Implemented CRUD operations, data validation, and strongly-typed views to improve data flow and UI–database interaction.</li>
+                        <li>Built modules such as user registration, booking, and admin dashboards following clean coding practices and MVC architecture.</li>
+                    </ul>
+                </div>
+
+                <!-- MIDDLE: DOT ON LINE -->
+                <div class="experience-center">
+                    <div class="experience-dot"></div>
+                </div>
+
+                <!-- RIGHT: DATE -->
+                <div class="experience-date">
+                    Jan 2025 – June 2025
+                </div>
+            </div>
+
+            <!-- ====== ROW 2 – date LEFT, card RIGHT ====== -->
+            <div class="experience-row right">
+                <!-- LEFT: DATE -->
+                <div class="experience-date">
+                    Dec 2023 – Feb 2024
+                </div>
+
+                <!-- MIDDLE: DOT ON LINE -->
+                <div class="experience-center">
+                    <div class="experience-dot"></div>
+                </div>
+
+                <!-- RIGHT: CARD -->
+                <div class="experience-card">
+                    <p class="experience-role">Web Developer Intern</p>
+                    <p class="experience-company">Full-Stack Web Development</p>
+                    <ul>
+                        <li>Completed multiple web development projects using HTML, CSS, Python, Django, Bootstrap, and JavaScript.</li>
+                        <li>Gained hands-on experience in front-end design, backend development, and database integration.</li>
+                        <li>Worked on UI design, authentication, routing, and ORM operations across full-stack features.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Education & Certifications -->
+<section id="education">
+    <div class="container">
+        <div class="section-header">
+            <center>
+                <h2 class="section-title">Education &amp; Certifications</h2>
+            </center>
+        </div>
+
+        <div class="edu-layout">
+            <!-- LEFT: MAIN EDUCATION CARD -->
+            <div class="edu-main-card">
+                <div class="edu-main-top-decor"></div>
+
+                <div class="edu-main-body">
+                    <span class="edu-date-pill">2021 – 2025</span>
+
+                    <h3 class="edu-degree">B.E. in Computer Engineering</h3>
+                    <p class="edu-college">Savitribai Phule Pune University</p>
+                    <p class="edu-inst">Your College Name, Nashik</p>
+
+                    <p class="edu-grade">
+                        Grade: <strong>8.31 CGPA | First Class</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT: CERTIFICATIONS COLUMN -->
+            <div class="cert-panel">
+                <center>
+                <h3 class="cert-title">Professional Certifications</h3>
+                </center>
+                <!-- CERT 1 -->
+                <div class="cert-card">
+                    <p class="cert-name">Yuva AI For All</p>
+                    <p class="cert-meta">nasscom / 2025</p>
+                    <a href="https://www.linkedin.com/in/manasi-patil-626851252/overlay/1765198597516/single-media-viewer/?profileId=ACoAAD5q3z4BroUoLV0I5I1j3xPae0o3UBSSmQU" class="cert-link">View Certificate</a>
+                </div>
+
+                <!-- CERT 2 -->
+                <div class="cert-card">
+                    <p class="cert-name">Introduction Of AI </p>
+                    <p class="cert-meta">LinkedIn · 2024</p>
+                    <a href="https://www.linkedin.com/in/manasi-patil-626851252/overlay/1765199123992/single-media-viewer/?profileId=ACoAAD5q3z4BroUoLV0I5I1j3xPae0o3UBSSmQU" class="cert-link">View Certificate</a>
+                </div>
+
+                
+
+                <!-- Add more cert-card blocks as needed -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+    <div class="container">
+        <div class="section-header">
+            <center style="font-size: 2.0rem;">
+                <h2 class="section-title">Get In Touch</h2>
+            </center>
+        </div>
+
+        <div class="contact-flex">
+
+            <!-- LEFT DETAILS BLOCK -->
+            <div class="contact-info-block">
+                <h2 class="contact-heading">Let's Connect</h2>
+
+                <p class="contact-desc">
+                    I'm always interested in new opportunities and collaborations.
+                    Feel free to reach out if you'd like to discuss a project or just say hello!
+                </p>
+
+                <div class="contact-row">
+                    <i class="fa-solid fa-location-dot contact-icon"></i>
+                    <span>Nashik, Maharashtra</span>
+                </div>
+
+                <div class="contact-row">
+                    <i class="fa-solid fa-phone contact-icon"></i>
+                    <a href="tel:+919421169851">+91 94211 69851</a>
+                </div>
+
+                <div class="contact-row">
+                    <i class="fa-solid fa-envelope contact-icon"></i>
+                    <a href="mailto:manasispatil205@gmail.com">manasispatil205@gmail.com</a>
+                </div>
+
+                <div class="contact-row">
+                    <i class="fa-brands fa-linkedin contact-icon"></i>
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+
+            <!-- RIGHT CONTACT FORM -->
+            <form class="contact-form card" onsubmit="event.preventDefault()">
+                <h3 class="form-title">Send a Message</h3>
+
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" required />
+                </div>
+
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" required />
+                </div>
+
+                <div class="field">
+                    <label>Message</label>
+                    <textarea required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    © <span id="year"></span> Manasi Patil. All Rights Reserved.
+</footer>
+
+<script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-theme");
+        toggleBtn.textContent = "🌙";
+    } else {
+        toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-theme");
+
+        if (body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
